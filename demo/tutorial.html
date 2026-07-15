@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>无眼的祈祷 · v10 教学关灰盒</title>
+  <link rel="stylesheet" href="tutorial.css">
+</head>
+<body>
+  <iframe id="gameFrame" src="index.html?tutorial=1" title="黑暗骑士战斗界面"></iframe>
+  <header id="tutorialHud">
+    <div id="locationBlock">
+      <strong id="locationTitle">大坟地</strong>
+      <span id="locationSubtitle">生者的地狱，死者的天堂</span>
+    </div>
+    <span id="tutorialVersion">v10</span>
+    <strong id="objective">苏醒</strong>
+    <button id="storySkip">跳过当前演出</button>
+  </header>
+  <section id="guideCaption" class="hidden" aria-live="polite">
+    <b id="guideSpeaker">伊莉雅</b><span id="guideText"></span>
+  </section>
+  <section id="storyOverlay">
+    <div id="sceneBackdrop" class="asset-slot" data-slot="BG_TUT_01">[BG_TUT_01：无边死人堆与黑色巨构]</div>
+    <div id="sceneCharacter" class="asset-slot character" data-slot="CH_TUT_01">[CH_TUT_01：主角倒在尸堆中]</div>
+    <div id="storyPanel">
+      <div id="chapterTitle">序章 · 无眼的祈祷</div>
+      <h1 id="storyTitle">大坟地</h1>
+      <div id="storySubtitle">生者的地狱，死者的天堂</div>
+      <p id="storyText"></p>
+      <button id="storyNext">继续</button>
+    </div>
+  </section>
+  <div id="assetRegistry" hidden></div>
+  <script src="tutorial.js"></script>
+</body>
+</html>
