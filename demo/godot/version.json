@@ -1,0 +1,6 @@
+{
+    "game":  "DARKNIGHT",
+    "version":  "12.0.0-dev",
+    "engine":  "Godot 4.6.3",
+    "source_commit":  "0f74b098d74c549cf09811ad586a9f319d62de01"
+}

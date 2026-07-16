@@ -1,0 +1,122 @@
+/* 艾瑟沃恩之骸 Aethelworn —— 石碑雕文暗黑主题
+   配色：焦黑褐地 / 石骨白雕文 / 血红点睛（参考巨构废墟关键图） */
+:root{
+  --abyss:#080706;--coal:#0e0c0a;--iron:#1a1613;
+  --stone:#cdc4b4;--stone-bright:#e9e2d3;--dim:#8b8378;--faint:#5c564d;
+  --blood:#8e1f16;--blood-hot:#c03325;--ember:#b0512a;
+  --line:rgba(205,196,180,.14);
+  --serif:Georgia,"Times New Roman","Noto Serif SC","Source Han Serif SC","STSong","SimSun",serif;
+  --ui:"Noto Sans SC","Microsoft YaHei UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--abyss)}
+body{margin:0;color:var(--stone);background:var(--abyss);font-family:var(--ui);line-height:1.7}
+a{color:inherit;text-decoration:none}button{font:inherit}
+::selection{background:#5c1810;color:var(--stone-bright)}
+
+/* ---- 顶栏：细字距导航 + 活动项血红下划线 ---- */
+.site-header{position:fixed;z-index:20;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:linear-gradient(rgba(8,7,6,.88),rgba(8,7,6,.42) 70%,transparent);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.site-header.scrolled{background:rgba(8,7,6,.94);border-bottom-color:var(--line)}
+.primary-nav{display:flex;gap:38px;font-size:12px;letter-spacing:.34em;color:var(--dim)}
+.primary-nav a{position:relative;padding:6px 2px;transition:color .2s}
+.primary-nav a:hover{color:var(--stone-bright)}
+.primary-nav a.active{color:var(--stone-bright)}
+.primary-nav a.active::after{content:"";position:absolute;left:2px;right:8px;bottom:-2px;height:2px;background:var(--blood-hot);box-shadow:0 0 8px rgba(192,51,37,.7)}
+.trial-tag{color:var(--faint);font-size:11px;letter-spacing:.3em;border:1px solid rgba(205,196,180,.16);padding:6px 12px}
+
+/* ---- 主视觉：Canvas 场景 + 居中雕文标题 ---- */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 90px;overflow:hidden;background:var(--abyss)}
+#heroScene,#heroEmbers{position:absolute;inset:0;width:100%;height:100%;display:block}
+#heroEmbers{mix-blend-mode:screen}
+.hero-copy{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+.tagline{margin:0 0 10px;color:var(--dim);font-size:clamp(11px,1.1vw,14px);letter-spacing:.52em;text-transform:uppercase;text-indent:.52em}
+.title-en{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(58px,10.5vw,168px);line-height:1.04;letter-spacing:.14em;text-transform:uppercase;text-indent:.14em;text-wrap:balance;
+  background:linear-gradient(180deg,#efe8d9 4%,#cfc5b1 38%,#9d917d 66%,#6c6153 96%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 6px 18px rgba(0,0,0,.85)) drop-shadow(0 22px 55px rgba(0,0,0,.6))}
+.rune-divider{display:flex;align-items:center;gap:16px;margin:20px 0 14px}
+.rune-divider span{width:min(150px,18vw);height:1px;background:linear-gradient(90deg,transparent,rgba(205,196,180,.4));display:block}
+.rune-divider span:last-child{transform:scaleX(-1)}
+.rune-divider i{width:9px;height:9px;background:linear-gradient(135deg,var(--blood-hot),var(--blood));transform:rotate(45deg);box-shadow:0 0 14px rgba(192,51,37,.85),0 0 40px rgba(142,31,22,.5)}
+.title-zh{margin:0;font-family:var(--serif);font-size:clamp(21px,2.6vw,34px);letter-spacing:.62em;text-indent:.62em;color:var(--stone-bright);text-shadow:0 4px 18px #000}
+.subtitle{margin:22px 0 0;color:var(--dim);font-size:clamp(13px,1.2vw,15px);letter-spacing:.18em;line-height:2.1}
+.hero-actions{display:flex;gap:18px;margin-top:38px}
+.button{min-width:176px;padding:14px 26px;text-align:center;font-size:12px;letter-spacing:.32em;text-indent:.32em;text-transform:uppercase;color:var(--stone);transition:border-color .2s,background .2s,box-shadow .2s,color .2s}
+.button.secondary{border:1px solid #4c463e;background:rgba(10,9,8,.62)}
+.button.secondary:hover{border-color:var(--stone);color:var(--stone-bright);background:rgba(26,22,19,.85)}
+.button.primary{border:1px solid #a2352a;background:linear-gradient(180deg,#7c1d15,#57130e);color:#f2d9cd;box-shadow:inset 0 1px 0 rgba(255,140,110,.22),0 0 22px rgba(142,31,22,.35)}
+.button.primary:hover{background:linear-gradient(180deg,#96261b,#6b1811);box-shadow:inset 0 1px 0 rgba(255,140,110,.3),0 0 34px rgba(192,51,37,.5)}
+.scroll-cue{position:absolute;z-index:2;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;color:var(--faint);font-size:10px;letter-spacing:.42em;text-indent:.42em;text-transform:uppercase}
+.scroll-cue:hover{color:var(--dim)}
+.chevrons{display:flex;flex-direction:column;gap:3px;animation:cueBob 2.2s ease-in-out infinite}
+.chevrons i{width:11px;height:11px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg)}
+.chevrons i:last-child{opacity:.45;margin-top:-7px}
+@keyframes cueBob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* ---- 章节骨架 ---- */
+.section-shell{width:min(1260px,calc(100vw - 80px));margin:0 auto;padding:130px 0}
+.section-heading{display:grid;grid-template-columns:170px 1fr;gap:40px;padding-bottom:58px;border-bottom:1px solid var(--line)}
+.section-heading span,.world-band span{color:var(--blood-hot);font-size:12px;letter-spacing:.34em}
+.section-heading h2,.world-band h2{max-width:870px;margin:0;font:500 clamp(30px,3.8vw,58px)/1.4 var(--serif);color:var(--stone-bright);text-wrap:balance}
+.feature-row{display:grid;grid-template-columns:170px 1fr 220px;gap:40px;padding:46px 0;border-bottom:1px solid var(--line)}
+.feature-index{font:44px var(--serif);color:var(--faint)}
+.feature-row h3{margin:0 0 12px;font:500 24px var(--serif);color:var(--stone-bright);letter-spacing:.08em}
+.feature-row p{max-width:640px;margin:0;color:var(--dim)}
+.feature-meta{align-self:end;color:var(--faint);font-size:12px;letter-spacing:.22em}
+
+/* ---- 世界带：雾中巨构横幅 ---- */
+.world-band{position:relative;min-height:60vh;display:flex;align-items:flex-end;padding:8vw;border-block:1px solid var(--line);overflow:hidden;
+  background:
+    radial-gradient(ellipse 62% 50% at 50% 8%,rgba(150,80,45,.10),transparent 70%),
+    radial-gradient(ellipse 30% 62% at 50% 66%,rgba(20,15,11,.92) 30%,transparent 72%),
+    linear-gradient(0deg,var(--abyss) 0,transparent 55%),
+    radial-gradient(circle at 58% 42%,#251f19,#100d0a 58%,#090807)}
+.world-band::before{content:"";position:absolute;left:50%;top:-12%;width:17%;height:86%;transform:translateX(-50%);filter:blur(6px);background:linear-gradient(90deg,transparent,rgba(9,7,5,.9) 24%,rgba(9,7,5,.95) 76%,transparent)}
+.world-band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,7,6,.9));pointer-events:none}
+.world-band>div{position:relative;z-index:1;max-width:960px}
+.world-band p{color:var(--dim);letter-spacing:.06em;max-width:640px}
+.world-stones{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:46px}
+.world-stones article{border-top:1px solid rgba(205,196,180,.22);padding-top:16px}
+.world-stones h3{margin:0 0 8px;font:500 19px var(--serif);color:var(--stone-bright);letter-spacing:.3em}
+.world-stones p{margin:0;font-size:13px;line-height:1.9;color:var(--dim)}
+
+/* ---- 试玩区 ---- */
+.demo-heading{grid-template-columns:1fr auto;align-items:end}
+.demo-heading>div{display:grid;grid-template-columns:170px 1fr;gap:40px}
+#fullscreenDemo{padding:12px 22px;border:1px solid #4c463e;background:var(--coal);color:var(--stone);letter-spacing:.2em;cursor:pointer;transition:border-color .2s,background .2s}
+#fullscreenDemo:hover{border-color:var(--stone);background:var(--iron)}
+.demo-note{color:var(--dim)}
+.demo-frame-shell{position:relative;margin-top:28px;aspect-ratio:16/9;border:1px solid #38332c;background:#040303;box-shadow:0 0 0 1px rgba(0,0,0,.9),0 40px 100px #000;overflow:hidden}
+.demo-frame-shell iframe{width:100%;height:100%;border:0;display:block}
+.demo-frame-shell:fullscreen{width:100vw;height:100vh;aspect-ratio:auto}
+.demo-frame-shell:fullscreen iframe{height:100vh}
+#demoLoading{position:absolute;inset:0;display:grid;place-items:center;color:var(--dim);letter-spacing:.24em;background:var(--abyss)}
+.loaded #demoLoading{display:none}
+
+footer{min-height:120px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;border-top:1px solid var(--line);color:var(--faint);font-size:11px;letter-spacing:.28em}
+footer a:hover{color:var(--dim)}
+
+/* ---- 滚动浮现 ---- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---- 键盘焦点 ---- */
+a:focus-visible,button:focus-visible{outline:2px solid var(--blood-hot);outline-offset:3px}
+
+@media(max-width:800px){
+  .site-header{padding:0 16px}.primary-nav{gap:20px;letter-spacing:.2em}.trial-tag{display:none}
+  .hero{padding:110px 18px 80px}
+  .title-en{font-size:clamp(44px,13vw,72px)}
+  .title-zh{letter-spacing:.4em;text-indent:.4em}
+  .hero-actions{flex-direction:column;width:220px}
+  .section-shell{width:calc(100vw - 36px);padding:84px 0}
+  .section-heading,.feature-row,.demo-heading,.demo-heading>div{grid-template-columns:1fr}
+  .feature-row{gap:15px}.feature-meta{align-self:auto}
+  .world-stones{grid-template-columns:1fr;gap:22px}
+  .demo-heading button{justify-self:start}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
