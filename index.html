@@ -3,73 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="《黑暗骑士 DARKNIGHT》黑暗奇幻卡组构筑动作游戏试玩。">
+  <meta name="description" content="《艾瑟沃恩之骸 Aethelworn》黑暗奇幻卡组构筑动作游戏——读尽杀意，逆神而行。序章公开试玩中。">
   <link rel="icon" href="data:,">
-  <title>黑暗骑士 DARKNIGHT</title>
+  <title>艾瑟沃恩之骸 Aethelworn</title>
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
   <header class="site-header" aria-label="主导航">
-    <a class="brand" href="#hero">DARKNIGHT</a>
-    <nav><a href="#game-details">游戏详情</a><a href="#play-demo">试玩</a></nav>
+    <nav class="primary-nav">
+      <a href="#hero" class="active">首 页</a>
+      <a href="#game-details">游 戏</a>
+      <a href="#world">世 界</a>
+      <a href="#play-demo">试 玩</a>
+    </nav>
+    <span class="trial-tag">公开试玩 · V10</span>
   </header>
 
   <main>
     <section id="hero" class="hero" data-asset-key="[WEB_HERO_WALLPAPER]">
+      <canvas id="heroScene" aria-hidden="true"></canvas>
+      <canvas id="heroEmbers" aria-hidden="true"></canvas>
       <div class="hero-copy">
-        <p class="eyebrow">黑暗奇幻 · 卡组构筑 · 实时读招</p>
-        <h1>黑 暗 骑 士</h1>
-        <p class="subtitle">让每一张牌，成为你真正挥出的动作。</p>
+        <p class="tagline">Read the Killing Intent. Defy the Gods.</p>
+        <h1 class="title-en">Aethelworn</h1>
+        <div class="rune-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+        <p class="title-zh">艾瑟沃恩之骸</p>
+        <p class="subtitle">黑暗奇幻 · 卡组构筑 · 实时读招<br>让每一张牌，成为你真正挥出的动作。</p>
         <div class="hero-actions">
           <a class="button secondary" href="#game-details">游戏详情</a>
-          <a class="button primary" href="#play-demo">试玩 Demo</a>
+          <a class="button primary" href="#play-demo">试玩 DEMO</a>
         </div>
       </div>
-      <div class="hero-depth" aria-hidden="true"><span></span><span></span><span></span></div>
-      <a class="scroll-cue" href="#game-details">向下探索</a>
+      <a class="scroll-cue" href="#game-details">Scroll to Explore<span class="chevrons" aria-hidden="true"><i></i><i></i></span></a>
     </section>
 
-    <section id="game-details" class="details section-shell">
+    <section id="game-details" class="details section-shell reveal">
       <header class="section-heading">
         <span>01 / GAME</span>
-        <h2>在敌人的刀落下以前，决定你要留下什么。</h2>
+        <h2>苛刻，公平，绝不原谅犹豫。</h2>
       </header>
       <article class="feature-row">
         <div class="feature-index">I</div>
-        <div><h3>读招不是猜招</h3><p>敌人的快刀、慢刀、佯攻与法术都有可学习的节奏。看清前摇，用闪避、完美格挡或手牌回应。</p></div>
-        <div class="feature-meta">时机 / 风险 / 反制</div>
+        <div><h3>即时格挡，在毫秒之间</h3><p>敌人的每一记快刀、慢刀与佯攻，都有可学习的前摇。看清杀意压下格挡，在完美窗口弹开重击、震碎架势；出手过早，精力便真实地流失——而红光招式无法格挡，唯有闪避。这里没有侥幸，只有你读懂或没读懂。</p></div>
+        <div class="feature-meta">前摇 / 完美窗口 / 红光</div>
       </article>
       <article class="feature-row">
         <div class="feature-index">II</div>
-        <div><h3>卡牌就是动作</h3><p>攻击、防御与战技不只是数值。留下一张防御牌，可能意味着少一次主动收益，却换来下一刀的弹反机会。</p></div>
-        <div class="feature-meta">生命 / 战技 / 精力</div>
+        <div><h3>不按一个键，也能走到王座之前</h3><p>反应操作永远是选择，不是门槛。牌面写明一切代价：不反应就只承受牌面伤害，绝无暗算。你可以像操作游戏那样弹反每一刀，也可以纯靠出牌与构筑步步为营——两条路都通向同一座王座。</p></div>
+        <div class="feature-meta">纯策略可通关 / 代价明示</div>
       </article>
       <article class="feature-row">
         <div class="feature-index">III</div>
-        <div><h3>构筑来自维度互补</h3><p>不同体系占据不同资源与触发维度，桥接牌让流派自然结合，而不是把所有强词条塞进同一套答案。</p></div>
-        <div class="feature-meta">印痕 / 架势 / 连携</div>
+        <div><h3>生命、战技、精力：以何为价</h3><p>三种资源交叉支付，强力卡牌可以燃烧生命施放；留下一张防御牌，是为下一刀备下的弹反；施法可被斩断，架势归零即是处决。每一回合，你都在决定用什么去换什么。</p></div>
+        <div class="feature-meta">三资源 / 斩断吟唱 / 破防处决</div>
       </article>
     </section>
 
-    <section class="world-band" data-asset-key="[WEB_WORLD_BANNER]">
-      <div><span>02 / WORLD</span><h2>巨构沉默，恶意拥有形状。</h2><p>正式美术尚未装载。这里是可替换的世界壁纸资源槽。</p></div>
+    <section id="world" class="world-band reveal" data-asset-key="[WEB_WORLD_BANNER]">
+      <div>
+        <span>02 / WORLD</span>
+        <h2>巨构沉默，神明俯瞰。</h2>
+        <p>双眼被金线缝死的少女，把她看世界的方式留给了你。从此每一份杀意都化作精确的数值与红线——而在这片骸骨之地，死亡从不无缘无故。</p>
+        <div class="world-stones">
+          <article><h3>大坟地</h3><p>生者的地狱，死者的天堂。你从尸堆中醒来，手边只剩一柄名为「碑」的黑铁剑。</p></article>
+          <article><h3>波防堤</h3><p>断生巨垣。神明的苍白巨手曾在此垂落，夺走了替你看着世界的那个声音。</p></article>
+          <article><h3>灰烬之径</h3><p>死者也无法触及之地。带着她的眼睛走下去——读尽沿途所有恶意，直到王座之前。</p></article>
+        </div>
+      </div>
     </section>
 
-    <section id="play-demo" class="demo section-shell">
+    <section id="play-demo" class="demo section-shell reveal">
       <header class="section-heading demo-heading">
-        <div><span>03 / PLAY</span><h2>试玩《无眼的祈祷》</h2></div>
+        <div><span>03 / PLAY</span><h2>试玩序章《无眼的祈祷》</h2></div>
         <button id="fullscreenDemo" type="button">全屏试玩</button>
       </header>
       <p class="demo-note">当前公开版本只包含序章教学试玩。方向键/鼠标操作，A 闪避，D 完美格挡或抵抗，Esc 暂停。</p>
       <div class="demo-frame-shell" id="demoShell">
         <div id="demoLoading">正在唤醒大坟地……</div>
-        <iframe id="demoFrame" src="demo/tutorial.html" title="黑暗骑士公开试玩"
+        <iframe id="demoFrame" src="demo/tutorial.html" title="艾瑟沃恩之骸公开试玩"
           sandbox="allow-scripts allow-same-origin" allow="fullscreen"></iframe>
       </div>
     </section>
   </main>
 
-  <footer><span>DARKNIGHT · v10 PUBLIC TRIAL</span><a href="#hero">返回顶部</a></footer>
+  <footer><span>AETHELWORN · 艾瑟沃恩之骸 · V10 PUBLIC TRIAL</span><a href="#hero">返回顶部</a></footer>
   <script src="site.js"></script>
 </body>
 </html>
