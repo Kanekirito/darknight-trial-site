@@ -1,7 +1,7 @@
 {
   "game": "DARKNIGHT",
-  "version": "12.2.0-dev",
+  "version": "12.3.0-dev",
   "engine": "Godot 4.6.3",
-  "source_commit": "e7e3caef2307b5b100182663a24dc1ed4d23567a",
-  "notes": "战斗手感重制：判定/选牌/三态条修复 + 打击感动效（CI headless 全量单测验证，nothreads 变体适配 Pages）"
+  "source_commit": "69e22811b15d602d36db8c8d72d1a5b8ef5bc785",
+  "notes": "v12.3：选中牌不被裁切/防御键=Space/游戏内全屏/抽弃牌动效/超限红光提示"
 }
