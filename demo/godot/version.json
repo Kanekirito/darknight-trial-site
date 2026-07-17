@@ -1,6 +1,7 @@
 {
-    "game":  "DARKNIGHT",
-    "version":  "12.0.0-dev",
-    "engine":  "Godot 4.6.3",
-    "source_commit":  "0f74b098d74c549cf09811ad586a9f319d62de01"
+  "game": "DARKNIGHT",
+  "version": "12.2.0-dev",
+  "engine": "Godot 4.6.3",
+  "source_commit": "e7e3caef2307b5b100182663a24dc1ed4d23567a",
+  "notes": "战斗手感重制：判定/选牌/三态条修复 + 打击感动效（CI headless 全量单测验证，nothreads 变体适配 Pages）"
 }
